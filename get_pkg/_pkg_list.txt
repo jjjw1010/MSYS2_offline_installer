@@ -1,0 +1,6 @@
+mingw-w64-ucrt-x86_64-toolchain
+compression
+VCS
+editors
+xorriso
+mingw-w64-ucrt-x86_64-nsis
