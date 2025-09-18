@@ -1,0 +1,7 @@
+# Exclude from get_pkg, generated .txt files
+/get_pkg/all_pkg_list.txt
+/get_pkg/expanded_meta_pkgs.txt
+
+
+# Exclude from install_pkg, basic_packages
+/install_pkg/basic_packages

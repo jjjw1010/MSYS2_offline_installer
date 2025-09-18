@@ -7,7 +7,7 @@ REM ==================================================
 set "MSYSBASH=C:\msys64\usr\bin\bash.exe"
 
 set "CURRENT_DIR=%CD%"
-set "META_PKG_LIST=_pkg_list.txt"
+set "META_PKG_LIST=%~dp0_pkg_list.txt"
 set "EXPANDED_META_OUTFILE=%~dp0expanded_meta_pkgs.txt"
 set "PKG_LIST_FILE=%~dp0all_pkg_list.txt"
 set "DEST_PKG=%~dp0..\install_pkg\basic_packages"
@@ -28,7 +28,11 @@ if not exist %META_PKG_LIST% (
 if exist "%EXPANDED_META_OUTFILE%" del "%EXPANDED_META_OUTFILE%"
 if exist "%PKG_LIST_FILE%" del "%PKG_LIST_FILE%"
 
-for /f "usebackq delims=" %%G in (_pkg_list.txt) do (
+REM Download packages to get pactree working
+%MSYSBASH% -lc "pacman -S --noconfirm --needed - < \"$(cygpath '%META_PKG_LIST%')\""
+
+
+for /f "usebackq delims=" %%G in (%META_PKG_LIST%) do (
     REM Test if %%G is a group
     %MSYSBASH% -lc "pactree -u '%%G' >/dev/null 2>&1"
     if errorlevel 1 (

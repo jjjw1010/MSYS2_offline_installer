@@ -16,7 +16,7 @@ Getting pkg from online machine
         www.packages.msys2.org/packages/
 
 2.  Place the package name under the following to get the deps as well:
-        get/get_pkg/_pkg_list.txt
+        /get_pkg/_pkg_list.txt
     
 3.  Run get_pkg.bat
 

@@ -4,3 +4,6 @@ VCS
 editors
 xorriso
 mingw-w64-ucrt-x86_64-nsis
+make
+perl-modules
+python-modules
